@@ -3,118 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ISHEP - Gestion Scolaire</title>
+    <title>ISHEP - L'excellence à portée de main</title>
     <style>
-        /* === COULEURS ISHEP === */
-        :root {
-            --bleu: #003366;
-            --blanc: #ffffff;
-            --or: #FFD700;
-        }
-
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: var(--blanc);
-            color: var(--bleu);
+            color: #222;
         }
-
-        /* ====== HEADER ====== */
+        /* Couleurs officielles */
+        :root {
+            --bleu: #004080;
+            --blanc: #ffffff;
+            --or: #FFD700;
+        }
         header {
-            background: linear-gradient(to right, var(--bleu), var(--or));
+            background-color: var(--bleu);
             color: var(--blanc);
-            padding: 20px;
-            text-align: center;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-
         header h1 {
             margin: 0;
-            font-size: 2em;
-            font-weight: bold;
+            font-size: 24px;
         }
-
         header p {
-            margin: 5px 0 0;
-            font-size: 1.1em;
+            margin: 0;
+            font-style: italic;
         }
-
-        /* ====== NAVIGATION ====== */
-        nav {
-            background-color: var(--bleu);
-            padding: 10px;
-            text-align: center;
-        }
-
         nav a {
             color: var(--blanc);
+            margin-left: 15px;
             text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 5px;
-            background-color: var(--or);
-            border-radius: 5px;
             font-weight: bold;
-            transition: 0.3s;
         }
-
-        nav a:hover {
-            background-color: #e6b800;
-        }
-
-        /* ====== SECTION PRINCIPALE ====== */
-        section {
-            padding: 40px;
+        .hero {
+            background: linear-gradient(rgba(0, 64, 128, 0.6), rgba(0, 64, 128, 0.6)), url('https://picsum.photos/1600/600?university') no-repeat center/cover;
+            color: var(--blanc);
             text-align: center;
+            padding: 80px 20px;
         }
-
-        section h2 {
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .hero a {
+            background-color: var(--or);
             color: var(--bleu);
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
         }
-
-        section p {
-            font-size: 1.1em;
-            max-width: 700px;
+        section {
+            padding: 40px 20px;
+            max-width: 1000px;
             margin: auto;
         }
-
-        /* ====== PIED DE PAGE ====== */
+        section h3 {
+            color: var(--bleu);
+            margin-bottom: 20px;
+            text-align: center;
+        }
         footer {
             background-color: var(--bleu);
             color: var(--blanc);
             text-align: center;
             padding: 15px;
-            margin-top: 30px;
         }
     </style>
 </head>
 <body>
-
-    <!-- HEADER -->
     <header>
-        <h1>ISHEP - Gestion Scolaire</h1>
-        <p>L'excellence à portée de main</p>
+        <div>
+            <h1>ISHEP</h1>
+            <p>L'excellence à portée de main</p>
+        </div>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">Programmes</a>
+            <a href="#">Contact</a>
+        </nav>
     </header>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <a href="#">Accueil</a>
-        <a href="#">Connexion</a>
-        <a href="#">Inscription</a>
-        <a href="#">Contact</a>
-    </nav>
+    <div class="hero">
+        <h2>Bienvenue à l'ISHEP</h2>
+        <p>Institut Supérieur des Hautes Études Polytechniques - Former l'élite de demain</p>
+        <a href="https://gautier1-1.github.io/ishep-gestion-scolaire/">Accéder à la plateforme</a>
+    </div>
 
-    <!-- SECTION PRINCIPALE -->
     <section>
-        <h2>Bienvenue sur notre plateforme</h2>
+        <h3>Présentation</h3>
         <p>
-            Cette application permet la gestion complète des étudiants, enseignants, cours, notes et bulletins.
-            Accédez facilement à toutes les fonctionnalités grâce à notre interface simple et sécurisée.
+            L'Institut Supérieur des Hautes Études Polytechniques (ISHEP) forme des professionnels
+            compétents et prêts à relever les défis du monde moderne. Nous offrons des programmes en
+            ingénierie, gestion, et sciences appliquées, dans un cadre propice à l'excellence académique.
         </p>
     </section>
 
-    <!-- PIED DE PAGE -->
-    <footer>
-        &copy; 2025 ISHEP - Tous droits réservés.
-    </footer>
+    <section>
+        <h3>Actualités</h3>
+        <ul>
+            <li>Bourses d’études disponibles pour les meilleurs étudiants</li>
+            <li>Inscriptions ouvertes jusqu'au 10 septembre 2025</li>
+            <li>Journées portes ouvertes - Venez découvrir l’ISHEP</li>
+        </ul>
+    </section>
 
+    <footer>
+        &copy; 2025 ISHEP - Tous droits réservés
+    </footer>
 </body>
 </html>
