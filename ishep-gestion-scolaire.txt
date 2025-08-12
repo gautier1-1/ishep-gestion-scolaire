@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISHEP - Système de Gestion Scolaire</title>
+    <style>
+        /* Style de base */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Institut Supérieur des Hautes Études Polytechniques</h1>
+        <p>Système de Gestion Scolaire</p>
+    </div>
+    
+    <div class="login-container">
+        <h2>Connexion</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur:</label>
+                <input type="text" id="username" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Mot de passe:</label>
+                <input type="password" id="password" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="role">Rôle:</label>
+                <select id="role" required>
+                    <option value="">-- Sélectionnez --</option>
+                    <option value="admin">Administrateur</option>
+                    <option value="teacher">Enseignant</option>
+                    <option value="student">Étudiant</option>
+                </select>
+            </div>
+            
+            <button type="submit">Se connecter</button>
+        </form>
+    </div>
+
+    <script>
+        // Simulation de connexion - À remplacer par Firebase/Auth réel
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const role = document.getElementById('role').value;
+            
+            // Validation basique
+            if(username === 'admin' && password === 'admin123') {
+                alert('Connexion réussie! Redirection...');
+                // Redirection basique - À adapter
+                if(role === 'admin') {
+                    window.location.href = 'admin-dashboard.html';
+                } else if(role === 'teacher') {
+                    window.location.href = 'teacher-dashboard.html';
+                } else {
+                    window.location.href = 'student-dashboard.html';
+                }
+            } else {
+                alert('Identifiants incorrects');
+            }
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion ISHEP</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Bienvenue à l'ISHEP</h1>
+    <script src="js/app.js"></script>
+</body>
+</html>
+<link rel="stylesheet" href="css/style.css">
+<!-- Dans index.html -->
+<form id="loginForm" class="auth-form">
+  <div class="form-group">
+    <label for="email">Email institutionnel:</label>
+    <input type="email" id="email" required placeholder="prenom.nom@ishep.edu">
+  </div>
+</form>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISHEP - Connexion</title>
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <main class="auth-container">
+        <img src="assets/logo-ishep.png" alt="Logo ISHEP" class="logo">
+        <form id="loginForm" class="auth-form">
+            <!-- Champs améliorés -->
+        </form>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
+git init
+git branch
+git push -u origin feature/admin-panel
+git diff
+git checkout main
+git merge votre-branche
+git push -u origin feature/votre-modification
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISHEP - Gestion Scolaire</title>
+    <style>
+        /* Style global */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+            color: #333;
+        }
+        
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* Navigation */
+        .sidebar {
+            width: 250px;
+            background: #2c3e50;
+            color: white;
+            padding: 20px 0;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        /* Cartes de module */
+        .module-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Barre latérale -->
+        <div class="sidebar">
+            <h2 style="text-align: center; padding: 10px;">ISHEP</h2>
+            <nav>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 10px 20px; background: #34495e;">Tableau de bord</li>
+                    <li style="padding: 10px 20px;">Étudiants</li>
+                    <li style="padding: 10px 20px;">Enseignants</li>
+                    <li style="padding: 10px 20px;">Finances</li>
+                    <li style="padding: 10px 20px;">Paramètres</li>
+                </ul>
+            </nav>
+        </div>
+        
+        <!-- Contenu principal -->
+        <div class="main-content">
+            <h1>Tableau de bord administratif</h1>
+            
+            <!-- Module Étudiants -->
+            <div class="module-card">
+                <h2>Gestion des Étudiants</h2>
+                <button style="background: #3498db; color: white; border: none; padding: 8px 16px; border-radius: 4px;">
+                    Ajouter un étudiant
+                </button>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Matricule</th>
+                            <th>Nom</th>
+                            <th>Filière</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ET2023001</td>
+                            <td>Jean Dupont</td>
+                            <td>Informatique</td>
+                            <td>
+                                <button style="background: #27ae60; color: white; border: none; padding: 5px 10px; border-radius: 3px; margin-right: 5px;">
+                                    Modifier
+                                </button>
+                                <button style="background: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 3px;">
+                                    Supprimer
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- Ajoutez plus d'étudiants ici -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Module Enseignants -->
+            <div class="module-card">
+                <h2>Gestion des Enseignants</h2>
+                <button style="background: #3498db; color: white; border: none; padding: 8px 16px; border-radius: 4px;">
+                    Ajouter un enseignant
+                </button>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nom</th>
+                            <th>Matière</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ENS4502</td>
+                            <td>Prof. Martin</td>
+                            <td>Mathématiques</td>
+                            <td>Actif</td>
+                        </tr>
+                        <!-- Ajoutez plus d'enseignants ici -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Module Finances -->
+            <div class="module-card">
+                <h2>Gestion Financière</h2>
+                <div style="display: flex; gap: 20px; margin-bottom: 20px;">
+                    <div style="flex: 1; background: #f1f1f1; padding: 15px; border-radius: 5px;">
+                        <h3>Recettes</h3>
+                        <p style="font-size: 24px; color: #27ae60;">2,450,000 XAF</p>
+                    </div>
+                    <div style="flex: 1; background: #f1f1f1; padding: 15px; border-radius: 5px;">
+                        <h3>Dépenses</h3>
+                        <p style="font-size: 24px; color: #e74c3c;">1,890,000 XAF</p>
+                    </div>
+                </div>
+                
+                <h3>Dernières transactions</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Étudiant</th>
+                            <th>Type</th>
+                            <th>Montant</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>15/10/2023</td>
+                            <td>ET2023001</td>
+                            <td>Frais de scolarité</td>
+                            <td style="color: #27ae60;">+150,000 XAF</td>
+                        </tr>
+                        <tr>
+                            <td>10/10/2023</td>
+                            <td>Fournitures</td>
+                            <td>Achat matériel</td>
+                            <td style="color: #e74c3c;">-75,000 XAF</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Exemple de fonctionnalité JS basique
+        document.querySelectorAll('.module-card h2').forEach(title => {
+            title.addEventListener('click', () => {
+                alert(`Ouverture du module ${title.textContent}`);
+            });
+        });
+    </script>
+</body>
+</html>
