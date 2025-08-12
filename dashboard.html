@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISHEP - Gestion Scolaire</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --success: #27ae60;
+            --danger: #e74c3c;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+            color: #333;
+        }
+        
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* Navigation */
+        .sidebar {
+            width: 250px;
+            background: var(--primary);
+            color: white;
+            padding: 20px 0;
+        }
+        
+        .sidebar h2 {
+            text-align: center;
+            padding: 10px;
+            margin: 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .nav-menu {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        
+        .nav-item {
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .nav-item:hover, .nav-item.active {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        /* Contenu principal */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        .module-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        .btn-primary {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+        
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 5px 0;
+        }
+        
+        .income {
+            color: var(--success);
+        }
+        
+        .expense {
+            color: var(--danger);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Barre latérale -->
+        <div class="sidebar">
+            <h2>ISHEP</h2>
+            <ul class="nav-menu">
+                <li class="nav-item active">Tableau de bord</li>
+                <li class="nav-item">Étudiants</li>
+                <li class="nav-item">Enseignants</li>
+                <li class="nav-item">Finances</li>
+                <li class="nav-item">Paramètres</li>
+            </ul>
+        </div>
+        
+        <!-- Contenu principal -->
+        <div class="main-content">
+            <h1>Tableau de bord administratif</h1>
+            
+            <!-- Statistiques rapides -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Étudiants</h3>
+                    <div class="stat-value">248</div>
+                    <small>+12 ce mois</small>
+                </div>
+                <div class="stat-card">
+                    <h3>Enseignants</h3>
+                    <div class="stat-value">18</div>
+                    <small>2 vacataires</small>
+                </div>
+                <div class="stat-card">
+                    <h3>Solde</h3>
+                    <div class="stat-value income">5,240,000 XAF</div>
+                    <small>Ce mois</small>
+                </div>
+            </div>
+            
+            <!-- Module Étudiants -->
+            <div class="module-card">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h2>Gestion des Étudiants</h2>
+                    <button class="btn btn-primary">Ajouter un étudiant</button>
+                </div>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Matricule</th>
+                            <th>Nom</th>
+                            <th>Filière</th>
+                            <th>Niveau</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ET2023001</td>
+                            <td>Jean Dupont</td>
+                            <td>Informatique</td>
+                            <td>Licence 2</td>
+                            <td>
+                                <button class="btn btn-success" style="padding: 5px 10px;">Editer</button>
+                                <button class="btn btn-danger" style="padding: 5px 10px;">Archiver</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ET2023002</td>
+                            <td>Marie Kamga</td>
+                            <td>Gestion</td>
+                            <td>Master 1</td>
+                            <td>
+                                <button class="btn btn-success" style="padding: 5px 10px;">Editer</button>
+                                <button class="btn btn-danger" style="padding: 5px 10px;">Archiver</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Module Enseignants -->
+            <div class="module-card">
+                <h2>Gestion des Enseignants</h2>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nom</th>
+                            <th>Matières</th>
+                            <th>Type</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ENS4501</td>
+                            <td>Prof. Ngoa</td>
+                            <td>Mathématiques, Statistiques</td>
+                            <td>Titulaire</td>
+                            <td><span style="color: var(--success);">Actif</span></td>
+                        </tr>
+                        <tr>
+                            <td>ENS4502</td>
+                            <td>Prof. Mbala</td>
+                            <td>Programmation</td>
+                            <td>Vacataire</td>
+                            <td><span style="color: var(--danger);">Inactif</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Module Finances -->
+            <div class="module-card">
+                <h2>Gestion Financière</h2>
+                
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <h3>Recettes</h3>
+                        <div class="stat-value income">3,450,000 XAF</div>
+                        <small>Ce mois</small>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Dépenses</h3>
+                        <div class="stat-value expense">1,890,000 XAF</div>
+                        <small>Ce mois</small>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Solde</h3>
+                        <div class="stat-value income">1,560,000 XAF</div>
+                        <small>Bénéfice</small>
+                    </div>
+                </div>
+                
+                <h3>Dernières transactions</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Libellé</th>
+                            <th>Montant</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>15/10/2023</td>
+                            <td>Frais de scolarité - ET2023001</td>
+                            <td class="income">+150,000 XAF</td>
+                            <td>Recette</td>
+                        </tr>
+                        <tr>
+                            <td>12/10/2023</td>
+                            <td>Achat matériel pédagogique</td>
+                            <td class="expense">-275,000 XAF</td>
+                            <td>Dépense</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fonctionnalité basique pour la navigation
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                // Retire la classe active de tous les items
+                document.querySelectorAll('.nav-item').forEach(i => {
+                    i.classList.remove('active');
+                });
+                // Ajoute la classe active à l'item cliqué
+                this.classList.add('active');
+                // Ici: Ajouter le code pour charger le module correspondant
+                alert(`Chargement du module: ${this.textContent}`);
+            });
+        });
+    </script>
+</body>
+</html>
