@@ -1,123 +1,143 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ISHEP - L'excellence à portée de main</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #222;
-        }
-        /* Couleurs officielles */
-        :root {
-            --bleu: #004080;
-            --blanc: #ffffff;
-            --or: #FFD700;
-        }
-        header {
-            background-color: var(--bleu);
-            color: var(--blanc);
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-        header p {
-            margin: 0;
-            font-style: italic;
-        }
-        nav a {
-            color: var(--blanc);
-            margin-left: 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .hero {
-            background: linear-gradient(rgba(0, 64, 128, 0.6), rgba(0, 64, 128, 0.6)), url('https://picsum.photos/1600/600?university') no-repeat center/cover;
-            color: var(--blanc);
-            text-align: center;
-            padding: 80px 20px;
-        }
-        .hero h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-        .hero a {
-            background-color: var(--or);
-            color: var(--bleu);
-            padding: 15px 30px;
-            font-size: 18px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        section {
-            padding: 40px 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
-        section h3 {
-            color: var(--bleu);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        footer {
-            background-color: var(--bleu);
-            color: var(--blanc);
-            text-align: center;
-            padding: 15px;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ISHEP - L'excellence à portée de main</title>
+<style>
+  :root {
+    --bleu: #004080;
+    --blanc: #ffffff;
+    --or: #FFD700;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    color: #222;
+    scroll-behavior: smooth;
+  }
+  header {
+    position: fixed;
+    width: 100%;
+    background-color: var(--bleu);
+    color: var(--blanc);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  header h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  nav a {
+    color: var(--blanc);
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  nav a:hover {
+    color: var(--or);
+  }
+  /* Pour décaler le contenu sous le header fixe */
+  main {
+    padding-top: 80px;
+    max-width: 900px;
+    margin: auto;
+  }
+  section {
+    padding: 40px 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  section:last-child {
+    border-bottom: none;
+  }
+  h2 {
+    color: var(--bleu);
+    border-bottom: 3px solid var(--or);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+  }
+  /* Bouton accès plateforme dans Accueil */
+  .btn-plateforme {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background-color: var(--or);
+    color: var(--bleu);
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  .btn-plateforme:hover {
+    background-color: #ccac00;
+  }
+  /* Footer */
+  footer {
+    background-color: var(--bleu);
+    color: var(--blanc);
+    text-align: center;
+    padding: 15px 10px;
+    margin-top: 40px;
+  }
+</style>
 </head>
 <body>
-    <header>
-        <div>
-            <h1>ISHEP</h1>
-            <p>L'excellence à portée de main</p>
-        </div>
-        <nav>
-            <a href="#">Accueil</a>
-            <a href="#">Programmes</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
 
-    <div class="hero">
-        <h2>Bienvenue à l'ISHEP</h2>
-        <p>Institut Supérieur des Hautes Études Polytechniques - Former l'élite de demain</p>
-        <a href="https://gautier1-1.github.io/ishep-gestion-scolaire/">Accéder à la plateforme</a>
-    </div>
+<header>
+  <h1>ISHEP</h1>
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#programmes">Programmes</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-    <section>
-        <h3>Présentation</h3>
-        <p>
-            L'Institut Supérieur des Hautes Études Polytechniques (ISHEP) forme des professionnels
-            compétents et prêts à relever les défis du monde moderne. Nous offrons des programmes en
-            ingénierie, gestion, et sciences appliquées, dans un cadre propice à l'excellence académique.
-        </p>
-    </section>
+<main>
+  <section id="accueil">
+    <h2>Bienvenue à l'ISHEP</h2>
+    <p><em>Institut Supérieur des Hautes Études Polytechniques - Former l'élite de demain</em></p>
+    <a href="https://gautier1-1.github.io/ishep-gestion-scolaire/" class="btn-plateforme" target="_blank" rel="noopener noreferrer">Accéder à la plateforme</a>
+  </section>
 
-    <section>
-        <h3>Actualités</h3>
-        <ul>
-            <li>Bourses d’études disponibles pour les meilleurs étudiants</li>
-            <li>Inscriptions ouvertes jusqu'au 10 septembre 2025</li>
-            <li>Journées portes ouvertes - Venez découvrir l’ISHEP</li>
-        </ul>
-    </section>
+  <section id="programmes">
+    <h2>Nos Programmes de Formation</h2>
 
-    <footer>
-        &copy; 2025 ISHEP - Tous droits réservés
-    </footer>
+    <article>
+      <h3>Licence Professionnelle en Génie Civil</h3>
+      <p>Formation spécialisée dans la construction, gestion de chantiers et études techniques.</p>
+    </article>
+
+    <article>
+      <h3>Licence Professionnelle en Mécatronique</h3>
+      <p>Alliant mécanique, électronique et informatique pour concevoir des systèmes automatisés.</p>
+    </article>
+
+    <article>
+      <h3>Licence Professionnelle en Marketing Digital</h3>
+      <p>Acquérir les compétences pour gérer la communication et la stratégie digitale des entreprises.</p>
+    </article>
+
+    <article>
+      <h3>Formation Continue et Stages</h3>
+      <p>Des formations courtes et ateliers pratiques pour professionnels et étudiants.</p>
+    </article>
+  </section>
+
+  <section id="contact">
+    <h2>Contactez-nous</h2>
+    <p>Pour plus d'informations, envoyez-nous un email à <a href="mailto:contact@ishep.cm">contact@ishep.cm</a> ou appelez le +237 6 12 34 56 78.</p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 ISHEP - L'excellence à portée de main
+</footer>
+
 </body>
 </html>
