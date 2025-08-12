@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS ishep_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE ishep_db;
+
+CREATE TABLE IF NOT EXISTS students (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  matricule VARCHAR(50) NOT NULL UNIQUE,
+  nom VARCHAR(150) NOT NULL,
+  prenoms VARCHAR(150),
+  filiere VARCHAR(100),
+  niveau VARCHAR(50),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS teachers (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nom VARCHAR(150) NOT NULL,
+  matiere VARCHAR(255),
+  type ENUM('titulaire','vacataire') DEFAULT 'titulaire',
+  email VARCHAR(150),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS finances (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  date_operation DATE NOT NULL,
+  libelle VARCHAR(255) NOT NULL,
+  montant DECIMAL(15,2) NOT NULL,
+  type ENUM('recette','depense') NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

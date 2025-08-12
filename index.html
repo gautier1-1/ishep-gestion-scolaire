@@ -1,143 +1,69 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ISHEP - L'excellence à portée de main</title>
-<style>
-  :root {
-    --bleu: #004080;
-    --blanc: #ffffff;
-    --or: #FFD700;
-  }
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    color: #222;
-    scroll-behavior: smooth;
-  }
-  header {
-    position: fixed;
-    width: 100%;
-    background-color: var(--bleu);
-    color: var(--blanc);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 30px;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  }
-  header h1 {
-    margin: 0;
-    font-size: 24px;
-  }
-  nav a {
-    color: var(--blanc);
-    margin-left: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-  }
-  nav a:hover {
-    color: var(--or);
-  }
-  /* Pour décaler le contenu sous le header fixe */
-  main {
-    padding-top: 80px;
-    max-width: 900px;
-    margin: auto;
-  }
-  section {
-    padding: 40px 20px;
-    border-bottom: 1px solid #ddd;
-  }
-  section:last-child {
-    border-bottom: none;
-  }
-  h2 {
-    color: var(--bleu);
-    border-bottom: 3px solid var(--or);
-    padding-bottom: 5px;
-    margin-bottom: 20px;
-  }
-  /* Bouton accès plateforme dans Accueil */
-  .btn-plateforme {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 25px;
-    background-color: var(--or);
-    color: var(--bleu);
-    font-weight: bold;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  .btn-plateforme:hover {
-    background-color: #ccac00;
-  }
-  /* Footer */
-  footer {
-    background-color: var(--bleu);
-    color: var(--blanc);
-    text-align: center;
-    padding: 15px 10px;
-    margin-top: 40px;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISHEP - Institut Supérieur des Hautes Études Polytechniques</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header>
-  <h1>ISHEP</h1>
-  <nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#programmes">Programmes</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+    <!-- ======== HEADER ======== -->
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo ISHEP">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="formations.html">Formations</a></li>
+                <li><a href="admission.html">Admission</a></li>
+                <li><a href="etudiants.html">Espace Étudiants</a></li>
+                <li><a href="enseignants.html">Espace Enseignants</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="btn-connexion">Connexion</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<main>
-  <section id="accueil">
-    <h2>Bienvenue à l'ISHEP</h2>
-    <p><em>Institut Supérieur des Hautes Études Polytechniques - Former l'élite de demain</em></p>
-    <a href="https://gautier1-1.github.io/ishep-gestion-scolaire/" class="btn-plateforme" target="_blank" rel="noopener noreferrer">Accéder à la plateforme</a>
-  </section>
+    <!-- ======== BANNIÈRE ======== -->
+    <section class="banniere">
+        <div class="overlay">
+            <h1>Institut Supérieur des Hautes Études Polytechniques</h1>
+            <p>"L'excellence à portée de main"</p>
+            <a href="admission.html" class="btn-principal">S'inscrire maintenant</a>
+        </div>
+    </section>
 
-  <section id="programmes">
-    <h2>Nos Programmes de Formation</h2>
+    <!-- ======== SECTIONS ======== -->
+    <section class="presentation">
+        <h2>Bienvenue à l'ISHEP</h2>
+        <p>Situé à Dschang, l'ISHEP forme des ingénieurs et techniciens supérieurs dans divers domaines. Notre mission est d'offrir une formation de qualité en adéquation avec les besoins du marché.</p>
+    </section>
 
-    <article>
-      <h3>Licence Professionnelle en Génie Civil</h3>
-      <p>Formation spécialisée dans la construction, gestion de chantiers et études techniques.</p>
-    </article>
+    <section class="services">
+        <div class="card">
+            <h3>Formations</h3>
+            <p>Plusieurs filières adaptées aux réalités du marché.</p>
+            <a href="formations.html" class="btn-secondaire">Découvrir</a>
+        </div>
+        <div class="card">
+            <h3>Admission</h3>
+            <p>Rejoignez notre institution et bâtissez votre avenir.</p>
+            <a href="admission.html" class="btn-secondaire">Voir les conditions</a>
+        </div>
+        <div class="card">
+            <h3>Vie Étudiante</h3>
+            <p>Une communauté dynamique et des infrastructures modernes.</p>
+            <a href="etudiants.html" class="btn-secondaire">Explorer</a>
+        </div>
+    </section>
 
-    <article>
-      <h3>Licence Professionnelle en Mécatronique</h3>
-      <p>Alliant mécanique, électronique et informatique pour concevoir des systèmes automatisés.</p>
-    </article>
-
-    <article>
-      <h3>Licence Professionnelle en Marketing Digital</h3>
-      <p>Acquérir les compétences pour gérer la communication et la stratégie digitale des entreprises.</p>
-    </article>
-
-    <article>
-      <h3>Formation Continue et Stages</h3>
-      <p>Des formations courtes et ateliers pratiques pour professionnels et étudiants.</p>
-    </article>
-  </section>
-
-  <section id="contact">
-    <h2>Contactez-nous</h2>
-    <p>Pour plus d'informations, envoyez-nous un email à <a href="mailto:contact@ishep.cm">contact@ishep.cm</a> ou appelez le +237 6 12 34 56 78.</p>
-  </section>
-</main>
-
-<footer>
-  &copy; 2025 ISHEP - L'excellence à portée de main
-</footer>
+    <!-- ======== FOOTER ======== -->
+    <footer>
+        <p>&copy; 2025 ISHEP - Tous droits réservés</p>
+    </footer>
 
 </body>
 </html>
